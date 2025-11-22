@@ -3,4 +3,10 @@
     margin: 0px;
     padding: 0px;
     font-family: "Epunda Slab", serif;
+
+    
+}
+
+a{
+    cursor: pointer;
 }

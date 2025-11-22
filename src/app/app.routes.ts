@@ -14,8 +14,6 @@ import { Footer } from './footer/footer';
 
 export const routes: Routes = [
     {path:'',component:Home,title:'Cookpedia - Home'},
-    {path:'header',component:Header},
-    {path:'footer',component:Footer},
     {path:'about',component:About,title:'Cookpedia - About'},
     {path:'contact',component:Contact,title:'Cookpedia - Contact'},
     {path:'login',component:Login,title:'Cookpedia - Login'},
