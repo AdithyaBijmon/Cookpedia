@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
+import { ApiService } from '../services/api-service';
 
 @Component({
   selector: 'app-home',
@@ -10,4 +11,18 @@ import { Footer } from '../footer/footer';
 })
 export class Home {
 
+  allRecipes:any = []
+
+  api = inject(ApiService)
+
+  ngOnInit(){
+    this.getAllRecipes()
+  }
+
+  getAllRecipes(){
+    this.api.getAllRecipesAPI().subscribe((res:any)=>{
+      this.allRecipes = res.slice(0,6)
+      console.log(this.allRecipes)
+    })
+  }
 }

@@ -4,12 +4,14 @@
         <div class="col-md-2"></div>
         <div class="col-md-4 text-light">
             <h1>The Easiest way <br> to Make Your <br> Favourite Meal</h1>
-            <p style="text-align: justify;">Discover 100+ recipes in your hand with the best recipe.Help you to find the easiest way to cook.</p>
+            <p style="text-align: justify;">Discover 100+ recipes in your hand with the best recipe.Help you to find the
+                easiest way to cook.</p>
             <a routerLink="/recipes" class="btn btn-success border">Explore our Recipes</a>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-5">
-            <img class="w-50 ms-5 landing-img" src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png" alt="recipe">
+            <img class="w-50 ms-5 landing-img" src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png"
+                alt="recipe">
         </div>
     </div>
 
@@ -22,88 +24,67 @@
         </div>
 
         <div class="row my-3">
+
+            @for(recipe of allRecipes;track $index){
             <div class="col-md-4">
                 <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
+                    <img [src]="recipe.image"
+                        alt="recipe" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
+                        <h5 class="card-title">{{recipe.name}}</h5>
                     </div>
                 </div>
             </div>
+            }
 
-             <div class="col-md-4">
-                <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-4">
-                <div class="p-3">
-                    <img src="https://media.istockphoto.com/id/901354116/photo/traditional-italian-pasta-alla-norma-with-eggplant-tomato-cheese-and-basil.jpg?s=612x612&w=0&k=20&c=SIZvs4HVWT0ICi9-nP8w9TUhj3U8EksujdLyNUVpCY8=" alt="recipe" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Recipe Name</h5>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
     <!-- recipe banner -->
-     <div style="background-image: url('https://img.freepik.com/premium-photo/food-banners_583952-13024.jpg');height: 400px;background-size: cover;" class="my-5 row align-items-center w-100">
+    <div style="background-image: url('https://img.freepik.com/premium-photo/food-banners_583952-13024.jpg');height: 400px;background-size: cover;"
+        class="my-5 row align-items-center w-100">
         <div class="col-md-6"></div>
         <div class="col-md-6">
             <div class="bg-light rounded p-5 w-75">
                 <h3>50+ Recipes That Very Quick and Fast</h3>
-                <p class="text-secondary">Find the perfect food ideas to start your day with the quick and easiest way.</p>
+                <p class="text-secondary">Find the perfect food ideas to start your day with the quick and easiest way.
+                </p>
             </div>
         </div>
-     </div>
+    </div>
 
-     <!-- Download app -->
-      <div class="my-5 p-5 row align-items-center bg-success rounded text-light">
+    <!-- Download app -->
+    <div class="my-5 p-5 row align-items-center bg-success rounded text-light">
         <div class="col-md-6">
-            <img style="height: 350px;" src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png" alt="image">
+            <img style="height: 350px;"
+                src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png"
+                alt="image">
         </div>
         <div class="col-md-6 text-center">
             <h1>Download App</h1>
             <p>Download the App from App store or <br> Google play for a better experience</p>
-            <img width="150px" src="https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png" alt="android">
-            <img width="150px" src="https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png" alt="ios">
+            <img width="150px"
+                src="https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png"
+                alt="android">
+            <img width="150px" src="https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png"
+                alt="ios">
         </div>
-      </div>
+    </div>
 
-      <div class="my-5 text-center">
-        
-      </div>
+    <!-- Testimony -->
+    <div class="my-5 text-center">
+        <h1>Client Testimonials</h1>
 
-      
+        <div class="scroll-text my-5 d-flex">
+            <div class="border rounded p-3 shadow me-2 w-25 text-wrap">
+                <span class="fw-bold">Client-name:</span>
+                <p>Message</p>
+            </div>
+
+        </div>
+    </div>
+
+
 
 </div>
 <app-footer></app-footer>

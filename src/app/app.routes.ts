@@ -9,8 +9,6 @@ import { Profile } from './profile/profile';
 import { SavedRecipes } from './saved-recipes/saved-recipes';
 import { ViewRecipe } from './view-recipe/view-recipe';
 import { Pnf } from './pnf/pnf';
-import { Header } from './header/header';
-import { Footer } from './footer/footer';
 
 export const routes: Routes = [
     {path:'',component:Home,title:'Cookpedia - Home'},
@@ -19,8 +17,8 @@ export const routes: Routes = [
     {path:'login',component:Login,title:'Cookpedia - Login'},
     {path:'register',component:Register,title:'Cookpedia - Register'},
     {path:'profile',component:Profile,title:'Cookpedia - Profile'},
-    {path:'recipies',component:Recipes,title:'Cookpedia - Recipies'},
+    {path:'recipes',component:Recipes,title:'Cookpedia - Recipies'},
     {path:'saved-recipe',component:SavedRecipes,title:'Cookpedia - User Recipe'},
-    {path:'recipe/:id/view',component:ViewRecipe,title:'Cookpedia - Recipe'},
+    {path:'view/:id/recipe',component:ViewRecipe,title:'Cookpedia - Recipe'},
     {path:'**',component:Pnf,title:'Page Not Found'},
 ];
