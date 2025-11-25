@@ -5,39 +5,44 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiService {
-  
-   http = inject(HttpClient)
-   serverUrl = "http://localhost:3000"
+
+  http = inject(HttpClient)
+  serverUrl = "http://localhost:3000"
 
   //  getAllRecipes
-  getAllRecipesAPI(){
-   return this.http.get(`${this.serverUrl}/all-recipes`)
+  getAllRecipesAPI() {
+    return this.http.get(`${this.serverUrl}/all-recipes`)
   }
 
   // register API
-  registerAPI(reqBody:any){
-    return this.http.post(`${this.serverUrl}/register`,reqBody)
+  registerAPI(reqBody: any) {
+    return this.http.post(`${this.serverUrl}/register`, reqBody)
   }
 
-  loginAPI(reqBody:any){
-    return this.http.post(`${this.serverUrl}/login`,reqBody)
+  loginAPI(reqBody: any) {
+    return this.http.post(`${this.serverUrl}/login`, reqBody)
   }
 
   // append token :return token append req header
-  appendToken(){
+  appendToken() {
     const token = sessionStorage.getItem("token")
     let headers = new HttpHeaders
-    if(token){
-      headers = headers.append("Authorization",`Bearer ${token}`)
+    if (token) {
+      headers = headers.append("Authorization", `Bearer ${token}`)
     }
-    return {headers}
+    return { headers }
   }
 
-  viewRecipeAPI(recipeId:String){
-    return this.http.get(`${this.serverUrl}/view/${recipeId}/recipe`,this.appendToken())
+  viewRecipeAPI(recipeId: String) {
+    return this.http.get(`${this.serverUrl}/view/${recipeId}/recipe`, this.appendToken())
   }
 
-   viewRelatedRecipeAPI(cuisine:String){
-    return this.http.get(`${this.serverUrl}/related-recipes?cuisine=${cuisine}`,this.appendToken())
+  viewRelatedRecipeAPI(cuisine: String) {
+    return this.http.get(`${this.serverUrl}/related-recipes?cuisine=${cuisine}`, this.appendToken())
+  }
+
+  addToDownloadAPI(recipe: any) {
+    return this.http.put(`${this.serverUrl}/recipes/${recipe._id}/download`,recipe,this.appendToken())
+
   }
 }
