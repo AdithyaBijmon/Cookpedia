@@ -1,1 +1,78 @@
-<p>profile works!</p>
+<app-header></app-header>
+<div class="container">
+    <div style="height: 200px;" class="bg-success row"></div>
+
+    <div>
+        <img width="200px" height="200px" style="border-radius: 50%;margin-top: -100px;" class="border p-2 ms-5"
+            src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="profile">
+    </div>
+
+    <div class="m-5">
+        <h3 class="my-3">Welcome user
+            <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><i
+                    class="fa-solid fa-edit text-primary"></i></button>
+        </h3>
+
+        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, facere autem!
+            Quo exercitationem velit animi, quas necessitatibus voluptatum nobis sit veniam nesciunt eum nostrum quia.
+            Cum laudantium laboriosam dignissimos omnis. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Perspiciatis exercitationem, consectetur porro quis iure itaque! Temporibus iste culpa perferendis delectus,
+            aspernatur laboriosam tempora qui fuga ducimus reprehenderit sed magni id. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Sequi aperiam molestias aliquam, labore est laboriosam, dignissimos rerum enim
+            quasi nobis nesciunt, ratione facere quam harum ullam dolore? Velit, unde neque?</p>
+
+        <h2 class="my-5">Downloaded Recipe List</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="p-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="recipe" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">name</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<app-footer></app-footer>
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Profile Updation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p style="text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores qui magni at
+            alias.</p>
+        <form class="my-5 border rounded p-3">
+            <div class="text-center">
+                <input type="file" id="profile" hidden>
+                <label for="profile">
+                    <img width="100px" height="100px" style="border-radius: 50%;"
+                        src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="">
+                        <button style="margin-top: 90px;margin-left: -50px;" class="btn "><i class="fa-solid fa-edit"></i></button>
+                </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="username" [(ngModel)]="username" type="email" class="form-control" id="floatingInput" placeholder="Username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="password" [(ngModel)]="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">New Password</label>
+            </div>
+            <div class="form-floating">
+                <input name="confirmPassword" [(ngModel)]="confirmPassword" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Confirm password</label>
+            </div>
+
+            <div class="d-grid mt-3">
+                <button class="btn btn-warning text-light">Update</button>
+            </div>
+        </form>
+
+    </div>
+</div>
