@@ -9,8 +9,12 @@ import { Profile } from './profile/profile';
 import { SavedRecipes } from './saved-recipes/saved-recipes';
 import { ViewRecipe } from './view-recipe/view-recipe';
 import { Pnf } from './pnf/pnf';
+import { AdminDashboard } from './admin/admin-dashboard/admin-dashboard';
 
 export const routes: Routes = [
+
+    // lazy loaded module path
+    {path:'admin',loadChildren:()=>import('./admin/admin-module').then(module=>module.AdminModule)},
     {path:'',component:Home,title:'Cookpedia - Home'},
     {path:'about',component:About,title:'Cookpedia - About'},
     {path:'contact',component:Contact,title:'Cookpedia - Contact'},
