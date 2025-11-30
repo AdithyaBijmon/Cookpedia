@@ -66,6 +66,6 @@ export class ApiService {
   }
 
   updateUserAPI(user: any) {
-    return this.http.post(`${this.serverUrl}/user/${user._id}/edit`, this.appendToken())
+    return this.http.post(`${this.serverUrl}/user/${user.id}/edit`,user,this.appendToken())
   }
 }

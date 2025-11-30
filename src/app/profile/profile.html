@@ -4,11 +4,11 @@
 
     <div>
         <img width="200px" height="200px" style="border-radius: 50%;margin-top: -100px;" class="border p-2 ms-5"
-            src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="profile">
+            [src]="profile" alt="profile">
     </div>
 
     <div class="m-5">
-        <h3 class="my-3">Welcome user
+        <h3 class="my-3">Welcome {{username.split(" ")[0]}}
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><i
                     class="fa-solid fa-edit text-primary"></i></button>
         </h3>
@@ -23,14 +23,17 @@
 
         <h2 class="my-5">Downloaded Recipe List</h2>
         <div class="row">
-            <div class="col-md-2">
+
+            @for(item of downloadList;track $index){
+                <div class="col-md-2">
                 <div class="p-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="recipe" class="card-img-top">
+                    <img [src]="item.recipeImg" alt="recipe" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">name</h5>
+                        <h6 class="card-title">{{item.recipeName}}</h6>
                     </div>
                 </div>
             </div>
+            }
         </div>
     </div>
 
@@ -49,10 +52,10 @@
             alias.</p>
         <form class="my-5 border rounded p-3">
             <div class="text-center">
-                <input type="file" id="profile" hidden>
+                <input (change)="getFile($event)" type="file" id="profile" hidden>
                 <label for="profile">
                     <img width="100px" height="100px" style="border-radius: 50%;"
-                        src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="">
+                        [src]="profile" alt="">
                         <button style="margin-top: 90px;margin-left: -50px;" class="btn "><i class="fa-solid fa-edit"></i></button>
                 </label>
             </div>
@@ -70,7 +73,7 @@
             </div>
 
             <div class="d-grid mt-3">
-                <button class="btn btn-warning text-light">Update</button>
+                <button (click)="editProfile()" class="btn btn-warning text-light">Update</button>
             </div>
         </form>
 
